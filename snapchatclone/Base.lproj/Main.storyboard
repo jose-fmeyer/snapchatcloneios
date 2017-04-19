@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CameraVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraVC" customModule="snapchatclone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yz-sV-mhm" userLabel="PreviewView" customClass="PreviewView" customModule="snapchatclone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KBH-yZ-BgQ" appends="YES" id="QCs-ub-VNE"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-Gm-hai">
+                                <rect key="frame" x="322" y="30" width="29" height="24"/>
+                                <state key="normal" image="camera_icon_snap"/>
+                                <connections>
+                                    <action selector="changeCameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bG5-iT-1a6"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XSY-hi-Ezu">
+                                <rect key="frame" x="136" y="30" width="103" height="29"/>
+                                <segments>
+                                    <segment title="Photo"/>
+                                    <segment title="Movie"/>
+                                </segments>
+                                <connections>
+                                    <action selector="midiaTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2bo-rh-Bk9"/>
+                                </connections>
+                            </segmentedControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-vR-MXL">
+                                <rect key="frame" x="124" y="313" width="127" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Tap to resume">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I34-xJ-tiD" userLabel="Camera unavailable">
+                                <rect key="frame" x="100" y="68" width="176" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Camera unavailable">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-SF-wm4" customClass="RoundedButton" customModule="snapchatclone" customModuleProvider="target">
+                                <rect key="frame" x="155" y="592" width="65" height="65"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="BnK-1c-QHx"/>
+                                    <constraint firstAttribute="height" constant="65" id="QKs-Yd-P3r"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="createsnap_btn"/>
+                                <connections>
+                                    <action selector="recordMidiaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BJP-SM-zfN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I34-xJ-tiD" firstAttribute="top" secondItem="XSY-hi-Ezu" secondAttribute="bottom" constant="10" id="1uL-Kz-UTg"/>
+                            <constraint firstItem="5Yz-sV-mhm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6fT-ey-Dhh"/>
+                            <constraint firstItem="l4N-vR-MXL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gou-Jv-Ifq"/>
+                            <constraint firstItem="5Yz-sV-mhm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="MPA-6P-UUW"/>
+                            <constraint firstItem="5Yz-sV-mhm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q2O-f2-dIK"/>
+                            <constraint firstItem="FJV-SF-wm4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X3a-Bw-qOd"/>
+                            <constraint firstItem="XSY-hi-Ezu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Yv0-ZJ-cYF"/>
+                            <constraint firstItem="eh1-Gm-hai" firstAttribute="top" secondItem="XSY-hi-Ezu" secondAttribute="top" id="eOx-if-vKh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eh1-Gm-hai" secondAttribute="trailing" constant="8" id="fsb-fm-na9"/>
+                            <constraint firstItem="I34-xJ-tiD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kgt-xE-bC0"/>
+                            <constraint firstItem="5Yz-sV-mhm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lbW-Y0-4Le"/>
+                            <constraint firstItem="XSY-hi-Ezu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p92-xd-O02"/>
+                            <constraint firstItem="l4N-vR-MXL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="shc-f1-hRW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FJV-SF-wm4" secondAttribute="bottom" constant="10" id="u7s-uj-ohe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraUnavailableBtn" destination="I34-xJ-tiD" id="MwU-dO-znw"/>
+                        <outlet property="changeCameraBtn" destination="eh1-Gm-hai" id="Vxu-e4-K3f"/>
+                        <outlet property="midiaTypeSegControl" destination="XSY-hi-Ezu" id="cjh-vA-Ivl"/>
+                        <outlet property="previewView" destination="5Yz-sV-mhm" id="J2e-j6-pZH"/>
+                        <outlet property="recordView" destination="FJV-SF-wm4" id="qww-oa-kqm"/>
+                        <outlet property="resumeView" destination="l4N-vR-MXL" id="KaQ-S7-1O9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KBH-yZ-BgQ">
+                    <connections>
+                        <action selector="focusAndExposeTap:" destination="BYZ-38-t0r" id="rfX-R9-SGd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="createsnap_btn" width="30" height="30"/>
+    </resources>
 </document>
