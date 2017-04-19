@@ -10,6 +10,9 @@
 		4C95E01AE50F8E515B60D3A4 /* Pods_snapchatclone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D569A83B77641FCB18E958 /* Pods_snapchatclone.framework */; };
 		7D0A211E1EA6818B004C244B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A211D1EA6818B004C244B /* RoundedButton.swift */; };
 		7D0A21201EA792BE004C244B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D0A211F1EA792BE004C244B /* GoogleService-Info.plist */; };
+		7D0A21221EA7CA88004C244B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A21211EA7CA88004C244B /* LoginVC.swift */; };
+		7D0A21261EA7D176004C244B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A21251EA7D176004C244B /* RoundedTextField.swift */; };
+		7D5272201EA7F17100F5B03C /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52721F1EA7F17100F5B03C /* UIViewControllerExtentions.swift */; };
 		7D7B3EB41EA55A1E00283E2D /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B3EB31EA55A1E00283E2D /* PhotoCaptureDelegate.swift */; };
 		7D7B3EB61EA55D1D00283E2D /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B3EB51EA55D1D00283E2D /* CameraVCDelegate.swift */; };
 		7DFCF6221EA556AD007CE3F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCF6211EA556AD007CE3F3 /* AppDelegate.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		7D0A211D1EA6818B004C244B /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7D0A211F1EA792BE004C244B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D0A21211EA7CA88004C244B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7D0A21251EA7D176004C244B /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		7D52721F1EA7F17100F5B03C /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
 		7D7B3EB31EA55A1E00283E2D /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		7D7B3EB51EA55D1D00283E2D /* CameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
 		7DFCF61E1EA556AD007CE3F3 /* snapchatclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapchatclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +105,8 @@
 			children = (
 				7DFCF6231EA556AD007CE3F3 /* CameraVC.swift */,
 				7DFCF6361EA5574F007CE3F3 /* CameraViewController.swift */,
+				7D0A21211EA7CA88004C244B /* LoginVC.swift */,
+				7D52721F1EA7F17100F5B03C /* UIViewControllerExtentions.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 				7D7B3EB31EA55A1E00283E2D /* PhotoCaptureDelegate.swift */,
 				7DFCF6381EA55774007CE3F3 /* PreviewView.swift */,
 				7D0A211D1EA6818B004C244B /* RoundedButton.swift */,
+				7D0A21251EA7D176004C244B /* RoundedTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -255,12 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D5272201EA7F17100F5B03C /* UIViewControllerExtentions.swift in Sources */,
 				7D0A211E1EA6818B004C244B /* RoundedButton.swift in Sources */,
 				7DFCF6241EA556AD007CE3F3 /* CameraVC.swift in Sources */,
+				7D0A21221EA7CA88004C244B /* LoginVC.swift in Sources */,
 				7DFCF6391EA55774007CE3F3 /* PreviewView.swift in Sources */,
 				7DFCF6221EA556AD007CE3F3 /* AppDelegate.swift in Sources */,
 				7D7B3EB41EA55A1E00283E2D /* PhotoCaptureDelegate.swift in Sources */,
 				7D7B3EB61EA55D1D00283E2D /* CameraVCDelegate.swift in Sources */,
+				7D0A21261EA7D176004C244B /* RoundedTextField.swift in Sources */,
 				7DFCF6371EA5574F007CE3F3 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
