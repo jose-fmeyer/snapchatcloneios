@@ -32,5 +32,30 @@ class LoginVC: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
+        
+        LoginService.instance.doEmailAuth(username: email, password: password) { (error, user) in
+            if error != nil {
+                if case LoginError.userNotFound = error as! LoginError {
+                    print("USER DOESN'T EXIST, CREATING IT")
+                    self.createNewUser(username: email, password: password)
+                } else {
+                    let alert = UIAlertController(title: "Login Error", message: "Error on try to login: \(error!.message()).", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func createNewUser(username: String, password: String) {
+        LoginService.instance.createNewUser(email: username, password: password) { (error, user) in
+            if error != nil {
+                let alert = UIAlertController(title: "Login Error", message: "Error trying to create a new user: \(error!.message()).", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else if user != nil {
+                self.performSegue(withIdentifier: "CameraVC", sender: nil)
+            }
+        }
     }
 }

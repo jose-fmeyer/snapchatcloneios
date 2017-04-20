@@ -99,5 +99,10 @@ class CameraVC: CameraViewController, CameraVCDelegate {
     @IBAction func recordMidiaPressed(_ sender: UIButton) {
         startMidiaCapture()
     }
+    
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "LoginVC", sender: nil)
+    }
 }
 

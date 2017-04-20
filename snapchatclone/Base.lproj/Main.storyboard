@@ -137,7 +137,7 @@
                     <connections>
                         <outlet property="emailField" destination="ij7-g4-r5r" id="5RS-57-Lrp"/>
                         <outlet property="passwordField" destination="zuH-QV-JLt" id="eAD-Ps-tnz"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginVC" id="JZr-YN-Flt"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="CameraVC" id="JZr-YN-Flt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVl-KW-3yK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,6 +181,17 @@
                                     <action selector="midiaTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2bo-rh-Bk9"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vm8-aR-INQ">
+                                <rect key="frame" x="24" y="30" width="36" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="EZZ-Re-PWr"/>
+                                    <constraint firstAttribute="width" constant="36" id="joG-rZ-Xov"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="send_btn"/>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKg-kf-R2C"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-vR-MXL">
                                 <rect key="frame" x="124" y="313.5" width="127" height="40"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
@@ -216,6 +227,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="I34-xJ-tiD" firstAttribute="top" secondItem="XSY-hi-Ezu" secondAttribute="bottom" constant="10" id="1uL-Kz-UTg"/>
+                            <constraint firstItem="Vm8-aR-INQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="3fl-Zd-aax"/>
                             <constraint firstItem="5Yz-sV-mhm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6fT-ey-Dhh"/>
                             <constraint firstItem="l4N-vR-MXL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gou-Jv-Ifq"/>
                             <constraint firstItem="5Yz-sV-mhm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="MPA-6P-UUW"/>
@@ -227,6 +239,7 @@
                             <constraint firstItem="I34-xJ-tiD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kgt-xE-bC0"/>
                             <constraint firstItem="5Yz-sV-mhm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lbW-Y0-4Le"/>
                             <constraint firstItem="XSY-hi-Ezu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p92-xd-O02"/>
+                            <constraint firstItem="Vm8-aR-INQ" firstAttribute="top" secondItem="XSY-hi-Ezu" secondAttribute="top" id="qRQ-v5-Qke"/>
                             <constraint firstItem="l4N-vR-MXL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="shc-f1-hRW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FJV-SF-wm4" secondAttribute="bottom" constant="10" id="u7s-uj-ohe"/>
                         </constraints>
@@ -248,13 +261,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="238" y="139"/>
+            <point key="canvasLocation" x="237.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera_icon_snap" width="29" height="24"/>
         <image name="createsnap_btn" width="30" height="30"/>
         <image name="devslopes" width="1080" height="1349"/>
+        <image name="send_btn" width="11" height="18"/>
         <image name="slapchat_logo" width="231" height="52"/>
     </resources>
 </document>

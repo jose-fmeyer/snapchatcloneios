@@ -13,6 +13,10 @@
 		7D0A21221EA7CA88004C244B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A21211EA7CA88004C244B /* LoginVC.swift */; };
 		7D0A21261EA7D176004C244B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A21251EA7D176004C244B /* RoundedTextField.swift */; };
 		7D5272201EA7F17100F5B03C /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52721F1EA7F17100F5B03C /* UIViewControllerExtentions.swift */; };
+		7D5272241EA7F3A200F5B03C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5272231EA7F3A200F5B03C /* Result.swift */; };
+		7D5272261EA7F3C000F5B03C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5272251EA7F3C000F5B03C /* LoginService.swift */; };
+		7D5272291EA7F3F900F5B03C /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5272281EA7F3F900F5B03C /* LoginError.swift */; };
+		7D52722D1EA8EEC700F5B03C /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D52722C1EA8EEC700F5B03C /* ErrorExtensions.swift */; };
 		7D7B3EB41EA55A1E00283E2D /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B3EB31EA55A1E00283E2D /* PhotoCaptureDelegate.swift */; };
 		7D7B3EB61EA55D1D00283E2D /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B3EB51EA55D1D00283E2D /* CameraVCDelegate.swift */; };
 		7DFCF6221EA556AD007CE3F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCF6211EA556AD007CE3F3 /* AppDelegate.swift */; };
@@ -30,6 +34,10 @@
 		7D0A21211EA7CA88004C244B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7D0A21251EA7D176004C244B /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		7D52721F1EA7F17100F5B03C /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
+		7D5272231EA7F3A200F5B03C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7D5272251EA7F3C000F5B03C /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		7D5272281EA7F3F900F5B03C /* LoginError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		7D52722C1EA8EEC700F5B03C /* ErrorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtensions.swift; sourceTree = "<group>"; };
 		7D7B3EB31EA55A1E00283E2D /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		7D7B3EB51EA55D1D00283E2D /* CameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
 		7DFCF61E1EA556AD007CE3F3 /* snapchatclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapchatclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +74,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D5272211EA7F38500F5B03C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7D5272221EA7F39400F5B03C /* Service */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		7D5272221EA7F39400F5B03C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7D5272231EA7F3A200F5B03C /* Result.swift */,
+				7D5272251EA7F3C000F5B03C /* LoginService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		7D5272271EA7F3EC00F5B03C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7D5272281EA7F3F900F5B03C /* LoginError.swift */,
+				7D52722C1EA8EEC700F5B03C /* ErrorExtensions.swift */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
 		7DFCF6151EA556AD007CE3F3 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +121,8 @@
 		7DFCF6201EA556AD007CE3F3 /* snapchatclone */ = {
 			isa = PBXGroup;
 			children = (
+				7D5272271EA7F3EC00F5B03C /* Error */,
+				7D5272211EA7F38500F5B03C /* Common */,
 				7DFCF6351EA556FE007CE3F3 /* Protocols */,
 				7DFCF6341EA556F8007CE3F3 /* View */,
 				7DFCF6331EA556EE007CE3F3 /* Controller */,
@@ -266,14 +302,18 @@
 			files = (
 				7D5272201EA7F17100F5B03C /* UIViewControllerExtentions.swift in Sources */,
 				7D0A211E1EA6818B004C244B /* RoundedButton.swift in Sources */,
+				7D5272291EA7F3F900F5B03C /* LoginError.swift in Sources */,
 				7DFCF6241EA556AD007CE3F3 /* CameraVC.swift in Sources */,
 				7D0A21221EA7CA88004C244B /* LoginVC.swift in Sources */,
 				7DFCF6391EA55774007CE3F3 /* PreviewView.swift in Sources */,
 				7DFCF6221EA556AD007CE3F3 /* AppDelegate.swift in Sources */,
 				7D7B3EB41EA55A1E00283E2D /* PhotoCaptureDelegate.swift in Sources */,
+				7D52722D1EA8EEC700F5B03C /* ErrorExtensions.swift in Sources */,
+				7D5272261EA7F3C000F5B03C /* LoginService.swift in Sources */,
 				7D7B3EB61EA55D1D00283E2D /* CameraVCDelegate.swift in Sources */,
 				7D0A21261EA7D176004C244B /* RoundedTextField.swift in Sources */,
 				7DFCF6371EA5574F007CE3F3 /* CameraViewController.swift in Sources */,
+				7D5272241EA7F3A200F5B03C /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
